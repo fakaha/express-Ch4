@@ -1,0 +1,33 @@
+### GET ALL
+GET http://localhost:3000/api/v1/posts
+
+
+### GET SEARCH
+GET http://localhost:3000/api/v1/posts?search=koru
+
+### CREATE POST
+POST http://localhost:3000/api/v1/posts
+Content-Type: application/json
+
+{
+  "title": "KE 14 ",
+  "body": "14 data dah"
+}
+
+
+### GET POST BY ID
+GET http://localhost:3000/api/v1/posts/13
+
+
+### UPDATE POST
+PUT http://localhost:3000/api/v1/posts/13
+Content-Type: application/json
+
+{
+    "title": "update ke id 13",
+    "body": "13 data terupdate"
+}
+
+
+### DELETE POST
+DELETE http://localhost:3000/api/v1/posts/14
