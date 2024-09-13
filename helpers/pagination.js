@@ -1,7 +1,7 @@
-function getPagination(req, count, limit, page) {
-  const pagination = {};
-  const link = {};
-  const path = `${req.protocol}://${req.get("host")}${req.baseUrl}`;
+module.exports = (req, count, page, limit) => {
+  let result = {};
+  let link = {};
+  let path = `${req.protocol}://${req.get("host")}` + req.baseUrl + req.path;
 
   if (count - limit * page <= 0) {
     link.next = "";
@@ -19,8 +19,8 @@ function getPagination(req, count, limit, page) {
     }
   }
 
-  pagination.links = link;
-  pagination.totalItems = count;
+  result.links = link;
+  result.total_items = count;
 
-  return pagination;
-}
+  return result;
+};
