@@ -25,10 +25,10 @@ async function create(req, res, next) {
 
 async function index(req, res, next) {
   try {
-    let { limit = 10, page = 1 } = req.query;
+   
 
     const { search } = req.query;
-    let query = "SELECT * FROM posts ORDER BY id LIMIT $1 OFFSET $2", [limit, (page-1) * limit];
+    let query = "SELECT * FROM posts";
 
     if (search)
       query += ` WHERE title ilike '%${search}%' OR body ilike '%${search}%'`;
